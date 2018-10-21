@@ -17,12 +17,16 @@ class BasePage():
         elem.send_keys(text)
 
     def click(self, by):
-        print "waiting for visible..."
         self.wait_for_element_visible(by)
-        print "getting element..."
         elem = self.driver.find_element(*by)
-        print "clicking..."
         elem.click()
+
+    def click_and_wait(self, by_click, by_wait):
+        """ click one element, wait for the next """
+        self.wait_for_element_visible(by)
+        elem = self.driver.find_element(*by_click)
+        elem.click()
+        self.wait_for_element_visible(*by_wait)
 
     def wait_for_element_visible(self, by):
         wait = WebDriverWait(self.driver, 10)

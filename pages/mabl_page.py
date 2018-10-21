@@ -12,6 +12,12 @@ class MablPage(BasePage):
 
     dashboard_title = (By.CSS_SELECTOR, ".page-content .fa-dashboard")
 
+    # nav buttons
+    nav_dashboard = (By.CSS_SELECTOR, "#side-menu .fa-dashboard")
+    nav_plans = (By.CSS_SELECTOR, "#side-menu .fa-tasks")
+    nav_configuration = (By.CSS_SELECTOR, "#side-menu .fa-cubes")
+    nav_settings = (By.CSS_SELECTOR, "#side-menu .fa-cog")
+
     def login_as_kent(self):
         self.click(self.login_with_google)
         self.click(self.kwood_online) 
