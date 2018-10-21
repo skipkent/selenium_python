@@ -1,17 +1,15 @@
-from selenium.webdriver.common.keys import Keys
-import time
+from base_page import BasePage
+from selenium.webdriver.common.by import By
 
-class PythonOrgPage():
+class PythonOrgPage(BasePage):
 
     def __init__(self, driver):
         self.driver = driver
 
-    def search_for(self, text):
-        elem = self.driver.find_element_by_name("q")
-        elem.clear()
-        elem.send_keys(text)
-        elem.send_keys(Keys.RETURN)
-        time.sleep(2)
+    search_input = (By.NAME, "q")
+    submit_button = (By.CSS_SELECTOR, "button#submit")
 
-    def get_page_source(self):
-        return self.driver.page_source
+    def search_for_text(self, text):
+        self.input_text_to_element(self.search_input, text)
+        self.click(self.submit_button) 
+
