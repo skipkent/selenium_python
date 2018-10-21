@@ -1,4 +1,4 @@
-from mabl_page import MablPage
+from pages.mabl_page import MablPage
 
 mabl_url = "https://app.mabl.com/login"
 

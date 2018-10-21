@@ -1,4 +1,4 @@
-from python_org_page import PythonOrgPage
+from pages.python_org_page import PythonOrgPage
 
 def test_the_search(webdriver):
     webdriver.get("http://www.python.org")
