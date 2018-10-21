@@ -9,7 +9,7 @@ def test_the_search(webdriver):
 
 def test_the_search_again(webdriver):
     webdriver.get("http://www.python.org")
-    assert "Python" in webdriver.title
+    assert "Wildebeest" not in webdriver.title
     python_org_page = PythonOrgPage(webdriver)
     python_org_page.search_for_text("pycon")
     assert "PyCon Argentina" in python_org_page.get_page_source()
