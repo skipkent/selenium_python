@@ -10,3 +10,6 @@ class PythonOrgPage(BasePage):
         self.input_text_to_element(self.search_input, text)
         self.click(self.submit_button) 
 
+    def do_something_with_the_inherited_driver(self):
+        self.driver.find_element(*self.search_input)  # not needed, just demonstrating
+
